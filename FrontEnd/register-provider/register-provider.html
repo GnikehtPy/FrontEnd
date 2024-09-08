@@ -31,7 +31,6 @@
                     </div>
                     <div class="dividing-line"></div>
                     <div class="form-right">
-
                         <label for="provider-number">Phone Number:</label>
                         <input type="tel" id="provider-number" name="provider-number" required>
 
@@ -42,7 +41,12 @@
                         <input type="text" id="tags" name="tags">
 
                         <label>Upload a Logo:</label>
-                        <input type="file" id="upload-logo" name="upload-logo"  accept="image/png, image/jpg, image/jpeg">
+                        <input type="file" id="upload-logo" name="upload-logo" accept="image/png, image/jpg, image/jpeg" onchange="previewLogo(event)">
+                        
+                        <!-- Image preview container -->
+                        <div class="logo-preview-container">
+                            <img id="logo-preview" src="#" alt="Logo Preview" class="logo-preview">
+                        </div>
                     </div>
                 </div>
                 <div class="register-button-container">
@@ -56,5 +60,16 @@
             </footer>
         </div>
     </div>
+
+    <script>
+        function previewLogo(event) {
+            const [file] = event.target.files;
+            if (file) {
+                const preview = document.getElementById('logo-preview');
+                preview.src = URL.createObjectURL(file);
+                preview.style.display = 'block';
+            }
+        }
+    </script>
 </body>
 </html>
