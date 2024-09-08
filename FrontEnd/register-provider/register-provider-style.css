@@ -104,6 +104,20 @@ input[type="file"] {
     background-color: #296879;
 }
 
+/* Image preview styles */
+.logo-preview-container {
+    margin-top: 10px;
+}
+
+.logo-preview {
+    display: none;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
 footer {
     text-align: center;
     margin-top: 20px;
